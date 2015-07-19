@@ -16,12 +16,8 @@ URL = 'http://sprunge.us'
 POST = 'sprunge'
 
 def new_id():
-    nid = ''
     symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    while len(nid) < 4:
-        n = random.randint(0, 35)
-        nid = nid + symbols[n:n + 1]
-    return nid
+    return ''.join(random.choice(symbols) for n in range(4))
 
 def help():
     form = (
